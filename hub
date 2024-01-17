@@ -1,0 +1,43 @@
+PS C:\Users\student\Desktop\sindhu> docker build -t abc .
+[+] Building 3.2s (9/9) FINISHED                                                                    docker:default
+ => [internal] load .dockerignore                                                                             0.0s
+ => => transferring context: 2B                                                                               0.0s
+ => [internal] load build definition from Dockerfile                                                          0.0s
+ => => transferring dockerfile: 116B                                                                          0.0s
+ => [internal] load metadata for docker.io/library/openjdk:latest                                             2.2s
+ => [1/4] FROM docker.io/library/openjdk@sha256:9b448de897d211c9e0ec635a485650aed6e28d4eca1efbc34940560a480b  0.0s
+ => [internal] load build context                                                                             0.0s
+ => => transferring context: 696B                                                                             0.0s
+ => CACHED [2/4] WORKDIR /app                                                                                 0.0s
+ => [3/4] COPY . /app                                                                                         0.0s
+ => [4/4] RUN javac Sum.java                                                                                  0.8s 
+ => exporting to image                                                                                        0.0s 
+ => => exporting layers                                                                                       0.0s 
+ => => writing image sha256:1d94a5580a01cc3ea180309641d14cacd60f5584fe373380e1da66206b5e130e                  0.0s 
+ => => naming to docker.io/library/abc                                                                        0.0s 
+
+What's Next?
+  View a summary of image vulnerabilities and recommendations → docker scout quickview
+PS C:\Users\student\Desktop\sindhu> docker run --name ab abc
+hello
+PS C:\Users\student\Desktop\sindhu> docker tag abc amrutha05/tag1:version1
+PS C:\Users\student\Desktop\sindhu> docker login -u amrutha05   
+Password: 
+Login Succeeded
+PS C:\Users\student\Desktop\sindhu> docker images
+REPOSITORY       TAG        IMAGE ID       CREATED         SIZE
+amrutha05/tag1   version1   1d94a5580a01   4 minutes ago   470MB
+abc              latest     1d94a5580a01   4 minutes ago   470MB
+prgm4            latest     8ddb8646bb66   5 weeks ago     470MB
+<none>           <none>     45ec68f4ba97   5 weeks ago     470MB
+<none>           <none>     4d11c224a5d2   5 weeks ago     470MB
+PS C:\Users\student\Desktop\sindhu> docker push amrutha05/tag1:version1
+The push refers to repository [docker.io/amrutha05/tag1]
+22515b336fe3: Pushed
+a641c2a6732d: Pushed
+f85dc0150737: Pushed
+56285d9a7760: Mounted from library/openjdk
+077bff59ce57: Mounted from library/openjdk
+9cd9df9ffc97: Mounted from library/openjdk
+version1: digest: sha256:d90480089ced523890c9b88288cb775a82ae333798f4d8bdb06cd6202e3445fe size: 1574
+PS C:\Users\student\Desktop\sindhu> 
