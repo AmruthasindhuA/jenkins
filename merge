@@ -1,0 +1,181 @@
+student@CN1 MINGW64 ~ (master)
+$ cd Desktop
+
+student@CN1 MINGW64 ~/Desktop (master)
+$ cd Demo
+
+student@CN1 MINGW64 ~/Desktop/Demo (master)
+$ git init
+Initialized empty Git repository in C:/Users/student/Desktop/Demo/.git/
+
+student@CN1 MINGW64 ~/Desktop/Demo (master)
+$ git add remote origin https://github.com/AmruthasindhuA/Demo.git
+fatal: pathspec 'remote' did not match any files
+
+student@CN1 MINGW64 ~/Desktop/Demo (master)
+$ git remote add origin https://github.com/AmruthasindhuA/Demo.git
+
+student@CN1 MINGW64 ~/Desktop/Demo (master)
+$ git add .
+
+student@CN1 MINGW64 ~/Desktop/Demo (master)
+$ git config user.email "20cse0159@vvce.ac.in"
+
+student@CN1 MINGW64 ~/Desktop/Demo (master)
+$ git confid user.name "AmruthasindhuA"
+git: 'confid' is not a git command. See 'git --help'.
+
+The most similar command is
+        config
+
+student@CN1 MINGW64 ~/Desktop/Demo (master)
+$ git config user.name "AmruthasindhuA"
+
+student@CN1 MINGW64 ~/Desktop/Demo (master)
+$ git checkout -b b1
+Switched to a new branch 'b1'
+
+student@CN1 MINGW64 ~/Desktop/Demo (b1)
+$ echo "hello"
+hello
+
+student@CN1 MINGW64 ~/Desktop/Demo (b1)
+$ git commit -m "hello"
+[b1 (root-commit) d7c8b2d] hello
+ 5 files changed, 7 insertions(+)
+ create mode 100644 .vs/Demo/v17/.wsuo
+ create mode 100644 .vs/VSWorkspaceState.json
+ create mode 100644 .vs/slnx.sqlite
+ create mode 100644 New1.txt
+ create mode 100644 This PC - Shortcut.lnk
+
+student@CN1 MINGW64 ~/Desktop/Demo (b1)
+$ git add .
+
+student@CN1 MINGW64 ~/Desktop/Demo (b1)
+$ git commit -m "hello"
+On branch b1
+nothing to commit, working tree clean
+
+student@CN1 MINGW64 ~/Desktop/Demo (b1)
+$ git push origin b1
+Enumerating objects: 10, done.
+Counting objects: 100% (10/10), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (10/10), 5.59 KiB | 1.12 MiB/s, done.
+Total 10 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'b1' on GitHub by visiting:
+remote:      https://github.com/AmruthasindhuA/Demo/pull/new/b1
+remote:
+To https://github.com/AmruthasindhuA/Demo.git
+ * [new branch]      b1 -> b1
+
+student@CN1 MINGW64 ~/Desktop/Demo (b1)
+$ git switch master
+fatal: invalid reference: master
+
+student@CN1 MINGW64 ~/Desktop/Demo (b1)
+$ git switch main
+fatal: invalid reference: main
+
+student@CN1 MINGW64 ~/Desktop/Demo (b1)
+$ git switch master
+fatal: invalid reference: master
+
+student@CN1 MINGW64 ~/Desktop/Demo (b1)
+$ git merge b1
+Already up to date.
+
+student@CN1 MINGW64 ~/Desktop/Demo (b1)
+$ git checkout -b b2
+Switched to a new branch 'b2'
+
+student@CN1 MINGW64 ~/Desktop/Demo (b2)
+$ echo "hello2"
+hello2
+
+student@CN1 MINGW64 ~/Desktop/Demo (b2)
+$ git add .
+
+student@CN1 MINGW64 ~/Desktop/Demo (b2)
+$ git commit -m "hello"
+On branch b2
+nothing to commit, working tree clean
+
+student@CN1 MINGW64 ~/Desktop/Demo (b2)
+$ git switch branch b1
+fatal: only one reference expected
+
+student@CN1 MINGW64 ~/Desktop/Demo (b2)
+$ git switch b1
+Switched to branch 'b1'
+
+student@CN1 MINGW64 ~/Desktop/Demo (b1)
+$ git push origin b2
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'b2' on GitHub by visiting:
+remote:      https://github.com/AmruthasindhuA/Demo/pull/new/b2
+remote:
+To https://github.com/AmruthasindhuA/Demo.git
+ * [new branch]      b2 -> b2
+
+student@CN1 MINGW64 ~/Desktop/Demo (b1)
+$ git merge b2
+Already up to date.
+
+student@CN1 MINGW64 ~/Desktop/Demo (b1)
+$ git switch master
+fatal: invalid reference: master
+
+student@CN1 MINGW64 ~/Desktop/Demo (b1)
+$ git log
+commit d7c8b2dcf13249926a6a18a0562a375c6f6d3f3a (HEAD -> b1, origin/b2, origin/b1, b2)
+Author: AmruthasindhuA <20cse0159@vvce.ac.in>
+Date:   Wed Jan 17 11:30:38 2024 +0530
+
+    hello
+
+student@CN1 MINGW64 ~/Desktop/Demo (b1)
+$ git status
+On branch b1
+nothing to commit, working tree clean
+
+student@CN1 MINGW64 ~/Desktop/Demo (b1)
+$ git reset --hard
+HEAD is now at d7c8b2d hello
+
+student@CN1 MINGW64 ~/Desktop/Demo (b1)
+$ git switch master
+fatal: invalid reference: master
+
+student@CN1 MINGW64 ~/Desktop/Demo (b1)
+$ list branch
+bash: list: command not found
+
+student@CN1 MINGW64 ~/Desktop/Demo (b1)
+$ git list branch
+git: 'list' is not a git command. See 'git --help'.
+
+The most similar commands are
+        bisect
+        rev-list
+
+student@CN1 MINGW64 ~/Desktop/Demo (b1)
+$ git branch
+* b1
+  b2
+
+student@CN1 MINGW64 ~/Desktop/Demo (b1)
+$ git pull "https://github.com/AmruthasindhuA/Demo.git"
+remote: Enumerating objects: 6, done.
+remote: Counting objects: 100% (6/6), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 6 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (6/6), 1.24 KiB | 60.00 KiB/s, done.
+From https://github.com/AmruthasindhuA/Demo
+ * branch            HEAD       -> FETCH_HEAD
+fatal: refusing to merge unrelated histories
+
